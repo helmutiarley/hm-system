@@ -1,9 +1,9 @@
-import "./Logo.css"
+import './Logo.css'
 
 export default function Logo() {
-    return (
-        <>
-        <span className="logotype">Logo</span>
-        </>
-    )
+  return (
+    <>
+      <span className="logotype">Logo</span>
+    </>
+  )
 }
