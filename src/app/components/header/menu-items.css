@@ -1,8 +1,0 @@
-.menu-items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-    border: 1px solid red;
-}

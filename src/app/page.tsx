@@ -1,18 +1,33 @@
-import Menu from './components/header/menu-items'
+import Header from './components/header/header'
 import './globals.css'
+import { AiFillFile } from 'react-icons/ai'
 
 export default function Home() {
   return (
     <div>
-      <header className="flex items-center justify-between p-3 border-red-600 border">
-        <div className="flex flex-row gap-2 items-center">
-          <img
-            src="https://dynamic.brandcrowd.com/asset/logo/17702da1-970e-4d7d-97a2-ab3756527d15/logo-search-grid-1x?logoTemplateVersion=1&v=637938158484330000&text=HM"
-            width={40}></img>
-          <span className="font-bold">HM System</span>
+      <Header />
+
+      <div className="flex flex-col items-center mt-20">
+        <div className="w-10/12 flex flex-row justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl font-extrabold leading-10">PDF files name Changer</h1>
+            <p className="text-lg text-gray-800 mt-3">Description about the project</p>
+          </div>
         </div>
-        <Menu />
-      </header>
+
+        <div className="flex flex-col items-center justify-center w-[70%] lg:w-[45%] h-60 mt-24 border-dashed border-2 border-gray-700 rounded-lg bg-slate-50 shadow-sm">
+          <div className="flex flex-col items-center">
+            <label
+              className="flex flex-row gap-2 items-center justify-center w-56 sm:w-64 h-12 rounded-md bg-[#4361ee] shadow-md text-white cursor-pointer"
+              htmlFor="file">
+              <AiFillFile size={20} />
+              <span className="font-normal">Selecionar ZIP</span>
+              <input type="file" id="file" hidden />
+            </label>
+            <span className="mt-3 text-md">Não sei oque colocar aqui :/</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
