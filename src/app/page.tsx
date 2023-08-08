@@ -23,7 +23,7 @@ export default function Home() {
               htmlFor="file">
               <AiFillFile size={20} />
               <span className="font-normal">Selecionar ZIP</span>
-              <Input/>
+              <Input />
             </label>
             <span className="mt-3 text-md">Não sei oque colocar aqui :/</span>
           </div>

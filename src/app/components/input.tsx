@@ -1,39 +1,24 @@
-"use client"
+'use client'
 
-import { useRef } from "react"
-
-// import AdmZip from 'adm-zip'
+import { useRef } from 'react'
+import { ExtractFiles } from '../functions/extract'
 
 export default function input() {
-  // const fileInputRef = useRef(null);
-
-  // const extractZipFile = () => {
-  //   const selectedFile = fileInputRef.current.files[0];
-
-  //   if (selectedFile) {
-  //     const zip = new AdmZip(selectedFile.path);
-  //     zip.extractAllTo('../../temp');
-  //   }
-  // };
   const fileInput = useRef<HTMLInputElement>(null)
 
-  const onFileChange = () => {
-    
+  const onFileChange = async () => {
     if (fileInput.current?.files) {
       const [file] = fileInput.current.files
 
       if (file) {
-        console.log("tem arquivo: ", file)
+        ExtractFiles(file)
       }
     }
   }
-    
-      return (
-        // <div>
-        //   <button onClick={extractZipFile}>Extrair Arquivo ZIP</button>
-        // </div>
-        <>
-        <input type="file" id="file" hidden ref={fileInput} onChange={onFileChange}/>
-        </>
-      );
-    }
+
+  return (
+    <>
+      <input type="file" id="file" hidden ref={fileInput} onChange={onFileChange} />
+    </>
+  )
+}

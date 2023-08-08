@@ -17,6 +17,7 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
     "fs": "^0.0.1-security",
+    "jszip": "^3.10.1",
     "next": "13.4.13",
     "pdfjs-dist": "^3.9.179",
     "postcss": "8.4.27",
