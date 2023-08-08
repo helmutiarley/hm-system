@@ -11,7 +11,7 @@ export default function input() {
       const [file] = fileInput.current.files
 
       if (file) {
-        // ExtractFiles(file)
+        ExtractFiles(file)
       }
     }
   }

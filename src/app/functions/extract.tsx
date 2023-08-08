@@ -11,6 +11,10 @@ export async function ExtractFiles(file: File) {
 
         console.log(content, newFilename)
       })
+
+      zip.generateAsync({ type: 'blob' }).then((content) => {
+        console.log(content)
+      })
     })
   } catch (error) {
     console.error('Erro:', error)
