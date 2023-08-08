@@ -2,13 +2,13 @@
 
 import { useState } from 'react'
 
+
+
 export default function input() {
   const [selectedFile, setSelectedFile] = useState<File>();
 
   const submitHandler = async (e: any) => {
     e.preventDefault()
-    console.log("deu bom")
-
     if(!selectedFile) return
 
   try {
@@ -19,6 +19,7 @@ export default function input() {
       method: "POST",
       body: data
     })
+    // handle the error
     if(!res) console.log("deu bom")
   } catch (e: any) {
     console.log(e)
@@ -30,7 +31,7 @@ export default function input() {
     <>
       <form onSubmit={submitHandler}>
         <input type="file" id="file" hidden onChange={(e) => setSelectedFile(e.target.files?.[0])} />
-        <button onSubmit={submitHandler}>Submit</button>
+        <button type='submit'>Upload</button>
       </form>
     </>
   )
