@@ -1,6 +1,7 @@
 import Header from './components/header/header'
 import './globals.css'
 import { AiFillFile } from 'react-icons/ai'
+import Input from './components/input'
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
               htmlFor="file">
               <AiFillFile size={20} />
               <span className="font-normal">Selecionar ZIP</span>
-              <input type="file" id="file" hidden />
+              <Input/>
             </label>
             <span className="mt-3 text-md">Não sei oque colocar aqui :/</span>
           </div>
