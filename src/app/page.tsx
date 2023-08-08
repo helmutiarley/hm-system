@@ -2,7 +2,6 @@ import Header from './components/header/header'
 import './globals.css'
 import { AiFillFile } from 'react-icons/ai'
 import Input from './components/input'
-import Description from './components/description'
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
             <p className="text-lg text-gray-800 mt-3">Description about the project</p>
           </div>
         </div>
-        <Description page="client-side"/>
+
         <div className="flex flex-col items-center justify-center w-[70%] lg:w-[45%] h-60 mt-24 border-dashed border-2 border-gray-700 rounded-lg bg-slate-50 shadow-sm">
           <div className="flex flex-col items-center">
             <label

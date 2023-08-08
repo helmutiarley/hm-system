@@ -2,21 +2,23 @@ import JSZip from 'jszip'
 
 export async function ExtractFiles(file: File) {
   try {
-    const zipData = await file.arrayBuffer()
-
     await JSZip.loadAsync(file).then((zip: JSZip) => {
-      Object.keys(zip.files).forEach((filename) => {
-        let content = zip.file(filename)?.async('string')
-        let newFilename = filename.replace(' ', '_')
+      Object.keys(zip.files).forEach(async (filename) => {
+        if (!filename.includes('.pdf')) {
+          return zip.remove(filename)
+        }
+        let zipObject = zip.file(filename)
 
-        console.log(content, newFilename)
+        zipObject?.async('arraybuffer').then(async (arrayBuffer) => {
+          console.log(arrayBuffer)
+        })
       })
 
       zip.generateAsync({ type: 'blob' }).then((content) => {
-        console.log(content)
+        console.log('blob:', content)
       })
     })
   } catch (error) {
-    console.error('Erro:', error)
+    console.error('Error:', error)
   }
 }

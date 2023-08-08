@@ -10,8 +10,12 @@ export default function input() {
     if (fileInput.current?.files) {
       const [file] = fileInput.current.files
 
-      if (file) {
+      if (file?.size > 0 && file.type == 'application/x-zip-compressed') {
         ExtractFiles(file)
+
+        fileInput.current.value = ''
+      } else {
+        console.log('Error: Invalid file, please upload a zip file.')
       }
     }
   }
