@@ -1,16 +1,19 @@
-import { NextResponse } from 'next/server';
+import { writeFile } from 'fs';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST() {
-  try {
-    const { file } = req.files;
-    const extractedFiles = await ExtractFiles(file.data); // Chamar a função para extrair os arquivos
+export async function POST(request: NextRequest) {
+  const data = await request.formData()
+  console.log(data)
+  const file: File | null = data.get('file') as unknown as File
 
-    // Aqui você pode fazer o que quiser com os arquivos extraídos
-    console.log('Arquivos extraídos:', extractedFiles);
-
-    res.status(200).send('Arquivo ZIP processado com sucesso.');
-  } catch (error) {
-    console.error('Erro ao processar o arquivo ZIP:', error);
-    res.status(500).send('Erro ao processar o arquivo ZIP.');
+  if(!file) {
+    return NextResponse.json({sucess: false})
   }
+
+  const bytes = await file.arrayBuffer()
+  const buffer = Buffer.from(bytes)
+  console.log(buffer)
+
+  console.log("POST RECEBIDO")
+  return NextResponse.json({sucess: true})
 }
