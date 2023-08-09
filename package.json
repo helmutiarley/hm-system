@@ -8,21 +8,21 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browser": {
+    "child_process": false
+  },
   "dependencies": {
     "@types/node": "20.4.8",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
-    "adm-zip": "^0.5.10",
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
-    "file-loader": "^6.2.0",
     "file-saver": "^2.0.5",
     "fs": "^0.0.1-security",
     "jszip": "^3.10.1",
     "next": "13.4.13",
-    "pdf-parse": "^1.1.1",
-    "pdfjs-dist": "^3.9.179",
+    "node-poppler": "^6.2.6",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",

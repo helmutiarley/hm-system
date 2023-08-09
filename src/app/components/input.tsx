@@ -1,9 +1,14 @@
 'use client'
 
 import { useRef } from 'react'
-import { ExtractFiles } from '../functions/extract'
+import ZipProcessor from '../processor/zip-processor'
+import ProcessContainer from './process/process-container'
 
-export default function input() {
+interface InputProps {
+  progress: any
+}
+
+const Input: React.FC<InputProps> = ({ progress }) => {
   const fileInput = useRef<HTMLInputElement>(null)
 
   const onFileChange = async () => {
@@ -11,8 +16,7 @@ export default function input() {
       const [file] = fileInput.current.files
 
       if (file?.size > 0 && file.type == 'application/x-zip-compressed') {
-        ExtractFiles(file)
-
+        await ZipProcessor(file, progress)
         fileInput.current.value = ''
       } else {
         console.log('Error: Invalid file, please upload a zip file.')
@@ -26,3 +30,5 @@ export default function input() {
     </>
   )
 }
+
+export default Input
