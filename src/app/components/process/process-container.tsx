@@ -28,7 +28,7 @@ const ProcessContainer = () => {
 
           updateProgress: (amount: number, percentage: number) => {
             setCurrentAmount(amount)
-            setProcessPercentage(percentage)
+            setProcessPercentage(Math.floor(percentage))
           }
         }
       },
@@ -57,7 +57,10 @@ const ProcessContainer = () => {
               </span>
             </div>
             <div className="w-full h-6 bg-white shadow-md">
-              <div className="h-full bg-red-500" style={{ width: `${processPercentage}%` }} />
+              <div
+                className="h-full bg-red-500 transition-all duration-200"
+                style={{ width: `${processPercentage}%` }}
+              />
             </div>
           </div>
         </div>

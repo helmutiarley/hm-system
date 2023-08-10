@@ -2,7 +2,6 @@
 
 import { useRef } from 'react'
 import ZipProcessor from '../processor/zip-processor'
-import ProcessContainer from './process/process-container'
 
 interface InputProps {
   progress: any
