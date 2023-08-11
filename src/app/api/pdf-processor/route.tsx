@@ -1,7 +1,8 @@
 import { join } from 'path'
-import fs from 'fs'
 import crypto from 'crypto'
 import { NextRequest, NextResponse } from 'next/server'
+
+import * as fs from 'fs'
 
 export async function POST(request: NextRequest) {
   const fileBlob: String | null = request.body as String | null
@@ -18,12 +19,6 @@ export async function POST(request: NextRequest) {
 
   try {
     await fs.promises.writeFile(filePath, fileBlob)
-
-    try {
-    } catch (error) {
-      console.error('Erro ao processar o PDF:', error)
-    }
-
     await fs.promises.unlink(filePath)
   } catch (error) {
     await fs.promises.unlink(filePath)

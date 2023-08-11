@@ -3,8 +3,6 @@ import ProcessContainer from './components/process/process-container'
 import './globals.css'
 
 export default function Home() {
-  const isProcessing = false
-
   return (
     <div>
       <Header />

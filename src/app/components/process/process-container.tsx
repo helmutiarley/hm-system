@@ -5,8 +5,8 @@ import { AiFillFile } from 'react-icons/ai'
 import Input from '../input'
 
 const ProcessContainer = () => {
-  const [isProcessing, setProcessing] = useState(false)
-  const [filename, setFilename] = useState('' as string)
+  const [isProcessing, setProcessing] = useState(true)
+  const [filename, setFilename] = useState('asadasd' as string)
   const [currentFilename, setCurrentFilename] = useState('' as string)
   const [processPercentage, setProcessPercentage] = useState(0 as number)
   const [currentAmount, setCurrentAmount] = useState(0 as number)
@@ -39,11 +39,11 @@ const ProcessContainer = () => {
       <div
         {...props}
         className={
-          'flex flex-col w-[70%] lg:w-[45%] h-40 mt-24 rounded-sm bg-[#3e3e42] text-white shadow-xl justify-between ' +
+          'flex flex-col w-[80%] lg:w-[45%] h-40 mt-24 rounded-sm bg-[#3e3e42] text-white shadow-xl justify-between ' +
           props?.className
         }>
-        <div className="m-3 w-fit h-fit bg-white rounded-sm">
-          <h1 className="p-2 text-sm text-black">{filename}</h1>
+        <div className="m-2 lg:m-3 w-fit h-fit bg-white rounded-sm">
+          <h1 className="p-1 lg:p-2 text-sm text-black">{filename}</h1>
         </div>
 
         <div className="w-full flex flex-col items-center">
@@ -75,7 +75,7 @@ const ProcessContainer = () => {
           isProcessing
             ? 'hidden'
             : '' +
-              ' flex flex-col items-center justify-center w-[70%] lg:w-[45%] h-60 mt-24 border-dashed border-2 border-gray-700 rounded-lg bg-slate-50 shadow-sm'
+              ' flex flex-col items-center justify-center w-[80%] lg:w-[45%] h-60 mt-24 border-dashed border-2 border-gray-700 rounded-lg bg-slate-50 shadow-sm'
         }>
         <div className="flex flex-col items-center">
           <label
